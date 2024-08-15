@@ -1,13 +1,26 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component, inject} from '@angular/core';
+import {ProfileService} from "./data/services/profile.service";
+import {ProfileCardComponent} from "./common-ui/profile-card/profile-card.component";
+import {JsonPipe} from "@angular/common";
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
+  standalone: true,
+  imports: [
+    ProfileCardComponent,
+    JsonPipe
+  ],
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Tik';
+  title = 'tik-talk';
+  profileService = inject(ProfileService);
+  profiles: any = []
+  constructor() {
+    this.profileService.getTestAcc()
+      .subscribe(val => {
+        this.profiles = val
+      })
+  }
 }
