@@ -7,6 +7,14 @@
   --primary-color:#AE7AFF
 }
 
+*,
+*:before,
+*:after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "JetBrains Mono", sans-serif;
   background: var(--dark-color);
@@ -22,6 +30,7 @@ body {
   font-size: 12px;
   font-weight: 700;
   margin-right: 4px;
+  height: 24px;
 }
 .btn {
   border: none;
