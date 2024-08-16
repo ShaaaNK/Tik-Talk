@@ -1,7 +1,6 @@
-import {Component, inject} from '@angular/core';
-import {ProfileService} from "./data/services/profile.service";
+import {Component} from '@angular/core';
 import {ProfileCardComponent} from "./common-ui/profile-card/profile-card.component";
-import {JsonPipe} from "@angular/common";
+import {RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -9,18 +8,10 @@ import {JsonPipe} from "@angular/common";
   standalone: true,
   imports: [
     ProfileCardComponent,
-    JsonPipe
+    RouterOutlet,
   ],
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'tik-talk';
-  profileService = inject(ProfileService);
-  profiles: any = []
-  constructor() {
-    this.profileService.getTestAcc()
-      .subscribe(val => {
-        this.profiles = val
-      })
-  }
+
 }
