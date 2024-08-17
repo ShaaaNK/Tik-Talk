@@ -1,10 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "fonts";
-
+@import "margin";
 :root {
   --dark-color: #000000;
   --light-color: #FFFFFF;
-  --primary-color:#AE7AFF
+  --primary-color:#AE7AFF;
+  --gray-color: #5F646D
 }
 
 *,
@@ -19,6 +20,8 @@ body {
   font-family: "JetBrains Mono", sans-serif;
   background: var(--dark-color);
   color: var(--light-color);
+  background-image: url(/assets/img/back.png);
+  background-size: 100% 100%;
 
 }
 
@@ -33,13 +36,30 @@ body {
   height: 24px;
 }
 .btn {
-  border: none;
   background: var(--primary-color);
   color: var(--dark-color);
   padding: 10px 20px;
   font-weight: 700;
   font-size: 14px;
   line-height: 24px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid var(--dark-color);
+}
+.btn-shadow {
+  position: relative;
+  &:before{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    background: var(--gray-color);
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+  }
 }
 .h6 {
   font-size: 18px;
@@ -50,4 +70,33 @@ body {
   font-size: 14px;
   line-height: 20px;
 
+}
+.h1{
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 800;
+}
+.tt-control-label{
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  display: block;
+
+}
+.tt-input{
+  width: 100%;
+  margin-top: 8px;
+  display: block;
+  border:1px solid var(--light-color);
+  border-radius: 4px;
+  padding: 12px 20px;
+  background: var(--dark-color);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  font-family: "JetBrains Mono", sans-serif;
+  color: var(--light-color);
+}
+.login-form{
+  margin: inherit;
 }
