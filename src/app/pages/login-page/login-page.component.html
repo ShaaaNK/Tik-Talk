@@ -17,7 +17,7 @@
       formControlName="password"
       type="text" class="tt-input" placeholder="Enter a password">
   </label>
-  <button class="btn btn-shadow">Enter</button>
+  <button class="btn btn-shadow" [disabled]="form.invalid">Enter</button>
 </form>
 
 <img src="/assets/svg/login.svg" alt="logo">
