@@ -1,7 +1,13 @@
 :host{
   display: grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:2fr 2fr;
   height: 100vh;
   align-items: center;
   margin: 0 5%;
+  justify-items: center;
+  align-content: center;
+}
+
+.logo {
+ // padding-left: 30%;
 }
