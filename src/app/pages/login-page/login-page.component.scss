@@ -1,13 +1,49 @@
 :host{
   display: grid;
-  grid-template-columns:2fr 2fr;
   height: 100vh;
   align-items: center;
-  margin: 0 5%;
-  justify-items: center;
-  align-content: center;
+  grid-gap: 62px;
+  place-items: center;
+  overflow: hidden;
 }
 
 .logo {
- // padding-left: 30%;
+  //padding-left: 30%;
+}
+
+.login-form{
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  border-radius: 30px;
+  text-align: center;
+  width: 350px;
+  display: grid;
+  gap: 1rem;
+}
+.login-form input {
+  width: 100%;
+  padding: 7px 7px;
+  border: none;
+  border-bottom: 2px solid gray;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: border-bottom 0.3s ease;
+}
+
+.login-form input:focus,
+.login-form input:not(:placeholder-shown) {
+  border-bottom: 2px solid transparent;
+  background: linear-gradient(90deg, red, darkred) no-repeat bottom / 100% 2px;
+}
+
+.club-logo{
+  padding-bottom: 30px;
+  position: inherit;
+  height: 100%;
+  width: 100%;
+
 }

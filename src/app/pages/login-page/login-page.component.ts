@@ -2,6 +2,7 @@ import {Component, inject} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {AuthService} from "../../auth/auth.service";
 import {LoginInterfaces} from "../../data/interfaces/login.interfaces";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -16,6 +17,7 @@ import {LoginInterfaces} from "../../data/interfaces/login.interfaces";
 export class LoginPageComponent {
   form: FormGroup;
   authService = inject(AuthService);
+  router = inject(Router);
   constructor(private fb:FormBuilder) {
     this.form = this.fb.group({
       username: ['', Validators.required],
@@ -31,6 +33,7 @@ export class LoginPageComponent {
        console.log(userCred);
       this.authService.login(userCred)
         .subscribe(res =>{
+          this.router.navigate([''])
           console.log(res)
         }
       )

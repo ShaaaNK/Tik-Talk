@@ -3,21 +3,22 @@
   [formGroup]="form"
   (ngSubmit)="onSubmit()"
 >
-  <h1 class="h1 mb60">Вход</h1>
+  <img class="club-logo" src="assets/img/club2.png">
+
   <label class="tt-control-label mb16">
-    Telegram username
+
     <input
       formControlName="username"
-      type="text" class="tt-input" placeholder="Enter a login">
+      type="text" class="tt-input" placeholder="Введите логин">
   </label>
 
   <label class="tt-control-label mb32">
-    Telegram username
+
     <input
       formControlName="password"
-      type="text" class="tt-input" placeholder="Enter a password">
+      type="text" class="tt-input" placeholder="Введите пароль">
   </label>
-  <button class="btn btn-shadow" [disabled]="form.invalid">Enter</button>
+  <button class="btn btn-shadow" [disabled]="form.invalid">Войти</button>
 </form>
 
-<img src="/assets/svg/login.svg" alt="logo" class="logo">
+<!--<img src="/assets/svg/login.svg" alt="logo" class="logo">-->
